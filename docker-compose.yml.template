@@ -1,0 +1,12 @@
+echo $1
+cd ${HOME}/beepcall
+docker-compose down || true
+rm -rf docker-compose.template docker-compose.yaml dockerfile ../conf/beepcall
+mkdir dockerfile
+cd ${HOME}/beepcall/dockerfile
+git clone http://jenkins:ostac123@dockerhub-sp.tac.co.th/beepcall-dockerfile/beepcall.git
+ln -s $HOME/beepcall/dockerfile/beepcall/conf $HOME/conf/beepcall
+cd ${HOME}/beepcall
+ln -s dockerfile/beepcall/docker-compose.template
+sed 's/img_version/'$1'/g' docker-compose.template > docker-compose.yaml
+docker-compose up -d
