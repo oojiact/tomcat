@@ -19,7 +19,7 @@
      define subcomponents such as "Valves" at this level.
      Documentation at /docs/config/server.html
  -->
-<Server port="8015" shutdown="SHUTDOWN">
+<Server port="8005" shutdown="SHUTDOWN">
   <Listener className="org.apache.catalina.startup.VersionLoggerListener" />
   <!-- Security listener. Documentation at /docs/config/listeners.html
   <Listener className="org.apache.catalina.security.SecurityListener" />
@@ -74,7 +74,7 @@
                maxSpareThreads="15"
                allowTrace="false"
                enableLookup="false"
-               redirectPort="8453" />
+               redirectPort="8443" />
 			   
 	<!-- A "Connector" using the shared thread pool-->
     <!-- Define a SSL/TLS HTTP/1.1 Connector on port 8443
@@ -85,12 +85,12 @@
          Either JSSE or OpenSSL style configuration may be used regardless of
          the SSLImplementation selected. JSSE style configuration is used below.
     -->
-    <Connector port="8453"
+    <Connector port="8443"
         scheme="https"
         secure="true"
         protocol="org.apache.coyote.http11.Http11NioProtocol"
         maxThreads="150" 
-        keystoreFile="/opt/tomcat/keys/tomcat.jks"
+        keystoreFile="/opt/tomcat/keys/certs.jks"
         keystorePass="xxxx"
         clientAuth="false"
         keyAlias="xxxx"
