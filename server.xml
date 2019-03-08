@@ -72,6 +72,7 @@
                maxThreads="50"
                minSpareThreads="5"
                maxSpareThreads="15"
+	       xpoweredBy="false"
                allowTrace="false"
                enableLookup="false"
                redirectPort="8443" />
