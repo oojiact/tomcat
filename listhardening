@@ -1,0 +1,28 @@
+refer  
+
+http://www.itsecure.hu/library/image/CIS_Apache_Tomcat_8_Benchmark_v1.0.1.pdf
+
+
+
+1. 1.1 Remove extraneous files and directories (Scored)
+
+RUN rm -rf /opt/tomcat/webapps/*
+
+2.1 Alter the Advertised server.info String (Scored)
+2.2 Alter the Advertised server.number String (Scored)
+2.3 Alter the Advertised server.built Date (Scored)
+
+
+
+extract catilina.jar 
+
+edit org/apache/catalina/util/ServerInfo.properties
+ remove 
+ server.info String 
+ server.number String 
+ server.built Date 
+ 
+2.4 Disable X-Powered-By HTTP Header and Rename the Server Value
+for all Connectors (Scored)
+
+
